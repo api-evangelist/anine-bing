@@ -1,19 +1,46 @@
 aid: anine-bing
 name: Anine Bing
-description: 'Anine Bing is a company surfaced as a portfolio company of index-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: retail. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Anine Bing is a Los Angeles-based contemporary womenswear and fashion brand
+  selling apparel, denim, footwear, and accessories direct to consumers through
+  its online store at aninebing.com. The storefront runs on Shopify and exposes a
+  modern agent-commerce surface: a published /llms.txt and /agents.md, a Universal
+  Commerce Protocol (ucp.dev) merchant profile at /.well-known/ucp, and a live UCP
+  shopping MCP endpoint for agent-driven catalog search, cart, and buyer-approved
+  checkout. Customer authentication is provided by Shopify's Customer Account API
+  over OpenID Connect. Originally added to the API Evangelist network as a portfolio
+  lead of Index Ventures, this profile has been enriched from the brand's real
+  public agent, auth, and discovery surfaces.
 url: https://raw.githubusercontent.com/api-evangelist/anine-bing/refs/heads/main/apis.yml
 x-type: company
 x-source: index-ventures-portfolio
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
+image: https://www.aninebing.com/cdn/shop/files/Screen_Shot_2019-11-20_at_9.53.49_AM.png?v=1614725796
 tags:
 - Company
 - Retail
+- Fashion
+- Apparel
+- Ecommerce
+- Shopify
+- Agent Commerce
+- MCP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +49,42 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://aninebing.com
+  url: https://www.aninebing.com
+- type: MCPServer
+  name: Anine Bing UCP shopping MCP
+  url: mcp/anine-bing-mcp.yml
+- type: LLMsTxt
+  name: llms.txt
+  url: llms/anine-bing-llms.txt
+- type: AgentSkill
+  name: Anine Bing agent instructions (agents.md)
+  url: skills/anine-bing-agents.md
+- type: WellKnown
+  name: Well-known discovery index
+  url: well-known/anine-bing-well-known.yml
+- type: Authentication
+  name: Authentication profile
+  url: authentication/anine-bing-authentication.yml
+- type: OpenIDConnect
+  name: OIDC discovery (Shopify Customer Account API)
+  url: well-known/anine-bing-openid-configuration.json
+- type: OAuthScopes
+  name: OAuth scopes
+  url: scopes/anine-bing-scopes.yml
+- type: DomainSecurity
+  url: security/anine-bing-domain-security.yml
+- type: PrivacyPolicy
+  url: https://www.aninebing.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://www.aninebing.com/policies/terms-of-service
+- type: Blog
+  name: Anine Bing Journal
+  url: https://www.aninebing.com/blogs/journal
+- type: Support
+  name: Contact
+  url: https://www.aninebing.com/pages/contact
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
