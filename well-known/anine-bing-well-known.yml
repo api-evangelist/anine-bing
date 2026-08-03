@@ -1,0 +1,26 @@
+generated: '2026-07-17'
+method: searched
+source: live probe of https://aninebing.com/.well-known/*
+host: https://www.aninebing.com
+documents:
+- path: /.well-known/openid-configuration      # OIDC discovery (Shopify Customer Account API)
+  status: 200
+  file: anine-bing-openid-configuration.json
+- path: /.well-known/oauth-authorization-server # RFC 8414 (identical Shopify issuer metadata)
+  status: 200
+  file: anine-bing-oauth-authorization-server.json
+- path: /.well-known/ucp                         # Universal Commerce Protocol merchant profile
+  status: 200
+  file: anine-bing-ucp.json
+- path: /.well-known/security.txt                # RFC 9116 — redirects to www, then 404
+  status: 404
+- path: /.well-known/api-catalog                 # RFC 9727 — redirects to www, then 404
+  status: 404
+- path: /.well-known/ai-plugin.json              # legacy OpenAI plugin manifest — 404
+  status: 404
+notes: >-
+  aninebing.com is a Shopify-hosted storefront. The openid-configuration and
+  oauth-authorization-server documents are Shopify's Customer Account API OIDC
+  metadata (issuer https://shopify.com/authentication/1501528) served on the
+  brand domain. The /.well-known/ucp document is the store's Universal Commerce
+  Protocol (ucp.dev) merchant profile advertising an MCP shopping endpoint.

@@ -1,0 +1,12 @@
+generated: '2026-07-17'
+method: searched
+source: https://www.aninebing.com/agents.md
+skills:
+- file: anine-bing-agents.md
+  name: Shop the Anine Bing store as an agent (UCP)
+  description: >-
+    Provider-published agent instructions (verbatim /agents.md) for reading store
+    data and transacting via the Universal Commerce Protocol MCP endpoint with
+    buyer-approved checkout.
+  api: mcp/anine-bing-mcp.yml
+  operations: [search_catalog, create_cart, create_checkout, update_checkout, complete_checkout]
